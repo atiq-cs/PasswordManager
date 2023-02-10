@@ -1,0 +1,23 @@
+# Build results
+**/[Xx]64/[Rr]elease/
+
+# VS Code
+.vscode/
+
+# Compiled Object files and Library
+*.o
+*.obj
+*.lib
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Executables
+*.exe
+*.out
