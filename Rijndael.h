@@ -1,8 +1,7 @@
-
 //Rijndael.h
-
-#ifndef __RIJNDAEL_H__
-#define __RIJNDAEL_H__
+#pragma once
+// #ifndef __RIJNDAEL_H__
+// #define __RIJNDAEL_H__
 
 #include <exception>
 #include <cstring>
@@ -185,5 +184,5 @@ private:
 	int t[MAX_BC];
 };
 
-#endif // __RIJNDAEL_H__
-
+// pragma statement on top takes care of it
+// #endif // __RIJNDAEL_H__
