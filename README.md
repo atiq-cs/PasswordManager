@@ -24,10 +24,12 @@ string password;
 - Add/Delete records
 - Show/Search records
 
-**Feature TODO/Plans**  
-Some of these are implemented by now,
-- Delete a record, take backup during delete
-- Backup option, import option
+**Features TODO**  
+On top of mind,
+- The process of manual modification to database (disabling encryption to get plain text for modifying) should be implemented to be supported via command line.
+- Import/export option, backup option.
+  - along with export to csv that allows direct import into bitwarden vault.
+- Take backup during deleting records till its well tested.
 - Security feature: change key and keep only one back up
 
 #### Q&A
