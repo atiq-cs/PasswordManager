@@ -6,7 +6,6 @@
 #define WRITE_FORCED 1
 #define DEC_ENABLED  1
 #define ENC_ENABLED  1
-using namespace std;
 
 
 // Global Data Variables
@@ -14,20 +13,20 @@ const int pwBlockSize = 32;
 
 // Global Data structure
 typedef struct DatabaseRecord {
-  string siteURL;
-  string tags;
-  string regEmail;
-  string userName;
-  string password;
+  std::string siteURL;
+  std::string tags;
+  std::string regEmail;
+  std::string userName;
+  std::string password;
 } AccountRecord;
 
 
 class RecordDatabase {
 private:
   bool dbChangeStatus;
-  map<string, AccountRecord> accountsMap;
+  std::map<std::string, AccountRecord> accountsMap;
   void loadDatabase();
-  void pushRecord(string& record);
+  void pushRecord(std::string& record);
 
 public:
   void addRecord();
