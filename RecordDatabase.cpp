@@ -23,6 +23,7 @@ void RecordDatabase::loadDatabase() {
   CRijndael oRijndael;
 
   try {
+    // Example Key, please change private key and store it in a secure fashion
     oRijndael.MakeKey("x9z1v6f7q1l3m8p9f9s2tg3n5c5o5w9r", "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", pwBlockSize, pwBlockSize);
   }
   catch(exception& roException) {

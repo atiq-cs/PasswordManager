@@ -1,3 +1,45 @@
+## Supplement
+This doc contains the driver program and early instructions when we didn't have options to modify records via menu.
+
+
+### Early Instructions
+Manually modifying password database file of Password Manager when modifying records via app wasn't available. Essentially, we would modify the plain text database file back, modify the records manually exiting the text file and encrypt it back.
+
+In instructions below,
+- disabling a macro means setting its value to 0.
+- enabling a macro means setting its value to 1. For example,
+
+```cpp
+#define ENC_ENABLED  1
+```
+
+These macros are found in 'RecordDatabase.h'.
+
+**Getting plain text file back from the encrypted file**  
+After getting the app code, set correct private key. Let's follow steps below,
+
+- First, let's disable `ENC_ENABLED` going to .h file.
+- Enable `WRITE_FORCED` and Run program. Or, add an entry, save it.
+ - that will do the trick for encryption disabled writing
+ - first try to find duplicate for this entry using 'Passwords.txt', remember that search using the menu option is case sensitive.
+- Now, we disable `DEC_ENABLED` before running the program next time.
+
+**Modify the password db**  
+Now we can use it to add entries running the program,
+- Length should be divisible by 32, if the length is less than 32 please append few 'Z' to make it 32.
+
+**Getting back encryption database file**  
+Getting back encryption database from the plain text db we retained above,
+
+- First, let's enalbe `ENC_ENABLED` going to .h file. It's a good idea to back up the database file.
+- Now, let's enable `WRITE_FORCED`, run the program which gives us the encrypted database.
+- Afterwards, disable `WRITE_FORCED` and run the program with `DEC_ENABLED` to check (by showing records or by searching).
+- Disable `DEC_ENABLED` before running the program next time.
+- Modify to dissembled key (probably for safety, not keeping the original private key in code).
+
+ref, *CredentialsManager_Inst.txt*
+
+
 ### Driver Program
 Initial driver program for Rijndael,
 
