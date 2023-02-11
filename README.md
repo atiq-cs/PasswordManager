@@ -15,17 +15,32 @@ string userName;
 string password;
 ```
 
+**Encoding**
+The program reads the input file in binary mode and writes in bianry mode.
+
+```cpp
+ifstream inFile ("pw.bin", ios::binary);
+```
+
+Hence, the output file cannot be opened using regular text editor. We could essential implement a text mode writing to help read/write easier as per the trick in Supplement.
+
+**Build**  
+General console instructions apply. It is an MBCS project without requiring additional OS Specific libraries to link.
+
 **Current status of this Project**  
 - It can encrypt and decrypt confidential data.
 - We can enable or disable encryption and decryption as required.
 - Modify take user choice function.
   - When a user mistakenly enters a couple of characters a.k.a string instead of a single character as choice. They should be asked to provide correct input.
-- Modify records
-- Add/Delete records
+- Add records
 - Show/Search records
+
+Due to modify/delete not being implemented yet we resort to a trick \(mentioned in [Supplement](https://github.com/atiq-cs/PasswordManager/blob/dev/Supplement.md)\) to modify an entire database file.
 
 **Features TODO**  
 On top of mind,
+- Modify records
+- Delete records
 - The process of manual modification to database (disabling encryption to get plain text for modifying) should be implemented to be supported via command line.
 - Import/export option, backup option.
   - along with export to csv that allows direct import into bitwarden vault.

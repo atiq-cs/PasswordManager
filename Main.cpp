@@ -6,7 +6,7 @@
 // Status : Good
 // Remarks: Credentials Manager Software
 //        - Encrypt/decrypt password database,
-//        - Retrieves credential and stores them
+//        - Retrieves entries with password and stores them
 //
 
 
@@ -55,11 +55,11 @@ int main () {
       passwordDatabaseObj.addRecord();
       break;
     case ChangeRecord:
-      cout<<"we are in change records"<<endl;
+      cout<<"Change record is not implemented yet!"<<endl;
       // changeRecord();
       break;
     case DeleteRecord:
-      cout<<"we are in delete records"<<endl;
+      cout<<"delete record is not implemented yet!"<<endl;
       // deleteRecord();
       break;
     case SearchRecords:
@@ -70,7 +70,7 @@ int main () {
       passwordDatabaseObj.showRecords();
       break;
     case ChangePassword:
-      cout<<"we are in change pass"<<endl;
+      cout<<"Change password is not implemented yet!"<<endl;
       //changePasswd();
       break;
     case QuitApp:
@@ -106,6 +106,6 @@ int main () {
 
 // Show Title of the Console Program
 void displayTitle() {
-  cout<<"Credential Manager 1.0 (console version)"<<endl;
+  cout<<"Password Manager 1.0 (Console Version)"<<endl;
   cout<<"========================================"<<endl;
 }

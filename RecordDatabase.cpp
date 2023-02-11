@@ -91,7 +91,7 @@ void RecordDatabase::pushRecord(string& record) {
   string title = record.substr(0, found);
   std::cout << "site title: "<<title<<endl;
 
-  prefound = found+1;
+  prefound = found + 1;
   found = record.find('\n', prefound);
   string field = record.substr(prefound, found-prefound);
   std::cout << "site URL: "<<field<<endl;
@@ -124,7 +124,7 @@ void RecordDatabase::pushRecord(string& record) {
   accountsMap[title] = recSingleInstance;
 }
 
-// This functions adds a record into our credential file
+// This functions adds a record into our password database file
 void RecordDatabase::addRecord() {
   AccountRecord tempRecord;
   std::cout << endl<<"Add record wizard"<<endl;

@@ -3,9 +3,9 @@
 #include <map>
 #include <string>
 
-#define WRITE_FORCED 1
-#define DEC_ENABLED  1
-#define ENC_ENABLED  1
+#define WRITE_FORCED 0
+#define DEC_ENABLED  0
+#define ENC_ENABLED  0
 
 
 // Global Data Variables
