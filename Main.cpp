@@ -23,7 +23,17 @@ void displayTitle();
 
 int main () {
 	displayTitle();
+
 	// authenticateUser();
+	/*
+		how does it authenticate?
+		1. read the password
+		2. read the key
+		3. decrypt file and check if file has been decrypted correctly if yes then proceed
+
+		other key services
+		everytime write is done, key position has to be changed
+	*/
 	RecordDatabase passwordDatabaseObj;
 	SPMMenu menu;
 
@@ -47,7 +57,7 @@ int main () {
 			break;
 		case ChangeRecord:
 			cout<<"we are in change records"<<endl;
-			//changeRecord();
+			//passwordDatabaseObj.changeRecord();
 			break;
 		case DeleteRecord:
 			cout<<"we are in delete records"<<endl;
@@ -87,7 +97,6 @@ void displayTitle() {
 	cout<<"Credential Manager 1.0 (console version)"<<endl;
 	cout<<"========================================"<<endl;
 }
-
 
 /*//Function to convert unsigned char to string of length 2
 void Char2Hex(unsigned char ch, char* szHex)

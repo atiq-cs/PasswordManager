@@ -80,7 +80,7 @@ AvailableOperations SPMMenu::translateChoice(char ch) {
 	if (isdigit(ch)) {
 		choice = ch-'0';
 		// correct
-		if (choice > 0 && (int) choice <= (int) itemList.size())	// sign mismatch
+		if (choice > 0 && (int) choice <= (int) itemList.size())	// cast to avoid sign mismatch
 			return (AvailableOperations) choice;
 	}
 	// if character (do a tolower) check if it matches with item hotkeys
