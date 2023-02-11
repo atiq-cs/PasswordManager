@@ -51,25 +51,35 @@ AvailableOperations SPMMenu::getChoice(void) {
 		// cout<<"debug, choice = "<<(int)choice<<endl;
 
 		// verify choice
-		if (choice != InvalidInput)
+		if (choice == InvalidInput)
+			cout<<"You have entered a wrong choice! Please select again."<<endl;
+		if (choice == NotSingleCharInput)
+			cout<<"You have entered multiple characters! Please select with a single letter or digit."<<endl;
+		else
 			break;
-		cout<<"You have entered a wrong choice! Please select again."<<endl;
 	}
 	return choice;
 }
 
 char SPMMenu::takeUserChoiceMainMenu() {
-	char choice='\n';
-	cout<<endl<<"Please enter choice: ";
+	char inputChar='\n';
+	short char_count=0;
+	cout<<endl<<"Please enter a choice: ";
 
-	// check if character is newline or space
-	while (choice == '\n' || choice == ' ')
-		choice = cin.get();
+	// ignore newline and spaces until a char is found; at the end char is stored in 'inputChar' variable
+	while (inputChar == '\n' || inputChar == ' ')
+		inputChar = cin.get();
+	char_count++;
 
-	// take out the extra garbage newline comes after the character, otherwise it makes problem in later processing
-	cin.get();
+	// continue input until newline is not found
+	while (cin.get() != '\n')
+		char_count++;
 
-	return choice;
+	if (char_count > 1)
+		return NotSingleCharInput;
+	// take out the extra garbage newline which comes after the character, otherwise it makes problem in later processing
+	// cout<<"returning "<<(int) inputChar<<endl;
+	return inputChar;
 }
 
 // translates choice and returns an integer value within range 0 to 6 where 0 means a wrong choice
@@ -77,7 +87,9 @@ AvailableOperations SPMMenu::translateChoice(char ch) {
 	short int choice;
 
 	// if digit check it it's in range
-	if (isdigit(ch)) {
+	if (ch == NotSingleCharInput)
+		return NotSingleCharInput;
+	else if (isdigit(ch)) {
 		choice = ch-'0';
 		// correct
 		if (choice > 0 && (int) choice <= (int) itemList.size())	// cast to avoid sign mismatch

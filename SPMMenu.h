@@ -2,7 +2,7 @@
 // PURPOSE: SPM Menu Header File
 //
 // Author : Atiq Rahman
-// Date   : 08-31-2012
+// Date   : 02-28-2013
 // Remarks: This header file contains the Menu class and necessary function definitions
 //     Additionaly, it declares an enum which specifies what types of operations are available for
 //     the menu and database
@@ -32,6 +32,7 @@ enum AvailableOperations {
 	ShowRecords,
 	ChangePassword,
 	QuitApp,
+	NotSingleCharInput
 };
 
 
